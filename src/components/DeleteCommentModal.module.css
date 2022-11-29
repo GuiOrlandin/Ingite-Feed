@@ -39,6 +39,7 @@
 }
 .deleteActionsButton button:hover {
     background: var(--gray-700);
+    cursor: pointer;
 }
 .deleteActionsButton button:nth-child(2):hover {
     color: var(--red-500);
