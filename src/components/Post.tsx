@@ -6,9 +6,9 @@ import { Comment } from "./Comment";
 import styles from "./Post.module.css";
 
 interface Author {
-  name: string,
-  role: string,
-  avatarUrl: string
+  name: string;
+  role: string;
+  avatarUrl: string;
 }
 
 interface Content {
@@ -22,9 +22,9 @@ interface propsPost {
   content: Content[];
 }
 
-export function Post({ author, publishedAt, content }:propsPost) {
-  const [comments, setComments] = useState(['Post muito bacana!']);
-  const [newCommentText, setNewCommentText] = useState('');
+export function Post({ author, publishedAt, content }: propsPost) {
+  const [comments, setComments] = useState(["Post muito bacana!"]);
+  const [newCommentText, setNewCommentText] = useState("");
 
   const publishedDateFormatted = format(
     publishedAt,
@@ -42,7 +42,7 @@ export function Post({ author, publishedAt, content }:propsPost) {
     event.preventDefault();
 
     setComments([...comments, newCommentText]);
-    setNewCommentText('');
+    setNewCommentText("");
   }
 
   function setHandleNewCommentChange(event: ChangeEvent<HTMLTextAreaElement>) {
@@ -107,9 +107,7 @@ export function Post({ author, publishedAt, content }:propsPost) {
         />
 
         <footer>
-          <button 
-          type="submit" 
-          disabled={emptyComment}>
+          <button type="submit" disabled={emptyComment}>
             Publicar
           </button>
         </footer>

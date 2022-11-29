@@ -1,27 +1,43 @@
-import { ThumbsDown, ThumbsUp, Trash } from "phosphor-react";
+import { ThumbsUp, Trash } from "phosphor-react";
+import Modal from "react-modal";
 import { useState } from "react";
 import { Avatar } from "./Avatar";
 import styles from "./Comment.module.css";
+import { DeleteCommentModal } from "./DeleteCommentModal";
 
 interface commentProps {
-  content: string,
-  onDeleteComment: ((comment: string) => void)
+  content: string;
+  onDeleteComment: (comment: string) => void;
 }
 
+Modal.setAppElement("#root");
 
-export function Comment({ content, onDeleteComment }:commentProps) {
+export function Comment({ content, onDeleteComment }: commentProps) {
   const [likeCount, setLikeCount] = useState(0);
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  function handleOpenModal() {
+    setIsOpen(true);
+  }
+
+  function handleCloseModal() {
+    setIsOpen(false);
+  }
 
   function handleDeleteComment() {
     onDeleteComment(content);
   }
 
-  function handleLikeCount (){
-    setLikeCount(likeCount + 1)
+  function handleLikeCount() {
+    setLikeCount(likeCount + 1);
   }
   return (
     <div className={styles.comment}>
-      <Avatar hasBorder={false} src="https://github.com/GuiOrlandin.png" alt=""/>
+      <Avatar
+        hasBorder={false}
+        src="https://github.com/GuiOrlandin.png"
+        alt=""
+      />
 
       <div className={styles.commentBox}>
         <div className={styles.commentContent}>
@@ -35,10 +51,18 @@ export function Comment({ content, onDeleteComment }:commentProps) {
                 Cerca de 1h atrás
               </time>
             </div>
-
-            <button onClick={handleDeleteComment} title="Deletar comentário">
-              <Trash size={20} />
-            </button>
+            <div>
+              <button onClick={handleOpenModal} title="Deletar comentário">
+                <Trash size={20} />
+              </button>
+              {modalIsOpen && (
+                <DeleteCommentModal
+                  cancel={handleCloseModal}
+                  confirm={handleDeleteComment}
+                  modalIsOpen={modalIsOpen}
+                />
+              )}
+            </div>
           </header>
           <p>{content}</p>
         </div>

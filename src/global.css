@@ -39,3 +39,30 @@ button {
   font-weight: 400;
   font-size: 1rem;
 }
+
+.react-modal-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.react-modal-content {
+  box-shadow: none;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 432px;
+  background-color: var(--gray-800);
+  position: relative;
+}
+.react-modal-close {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  background: transparent;
+  transition: filter 0.2s;
+}
