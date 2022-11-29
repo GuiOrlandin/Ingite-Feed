@@ -6,7 +6,7 @@
 
 ## 📃 About
 
-Ignite Feed 
+Ignite feed trata-se de um projeto em que simula uma rede social, podendo aplaudir alguns comentários e caso não goste do seu comentário também pode deleta-lo!
 
 ## 🎨 Layout
 
@@ -20,7 +20,7 @@ Ignite Feed
 
 ## 🎞 Demo
 
-<img src="./assets/demo.png">
+<img src="/assets/demo.png">
 
 ## ⚙ Features
 
