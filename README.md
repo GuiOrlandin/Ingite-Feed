@@ -6,8 +6,7 @@
 
 ## 📃 About
 
-Ignite Feed 
-
+Ignite feed trata-se de um projeto em que simula uma rede social, podendo aplaudir alguns comentários e caso não goste do seu comentário também pode deleta-lo
 ## 🎨 Layout
 
 - [Layout Figma - Original](https://www.figma.com/file/7Cwub6u2QyN78Aj0l57mXS/Ignite-Feed-(Community)?node-id=0%3A1&t=uwU9bChdIiczu6gt-0)
@@ -20,7 +19,7 @@ Ignite Feed
 
 ## 🎞 Demo
 
-<img src="./assets/demo.png">
+<img src="src/assets/demo.png">
 
 ## ⚙ Features
 
